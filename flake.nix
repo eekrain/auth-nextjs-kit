@@ -41,7 +41,11 @@
               languages.typescript.enable = true;
               languages.javascript.pnpm.enable = true;
 
-              packages = [prisma-engines];
+              packages = [
+                prisma-engines
+                pkgs.openssl
+              ];
+
               enterShell = ''
                 export PRISMA_MIGRATION_ENGINE_BINARY="${prisma-engines}/bin/migration-engine"
                 export PRISMA_SCHEMA_ENGINE_BINARY="${prisma-engines}/bin/schema-engine"
